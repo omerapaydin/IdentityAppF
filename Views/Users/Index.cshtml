@@ -1,0 +1,27 @@
+@model List<ApplicationUser>
+  @foreach(var usr in Model) {
+  <p>@usr.Email</p>
+  <a
+    asp-controller="Users"
+    asp-action="Edit"
+    asp-route-id="@usr.Id"
+    class="btn btn-primary"
+    >Edit</a>
+  <form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@usr.Id" />
+    <button
+      class="btn btn-danger"
+      type="submit"
+      style="display: inline-block"
+      onsubmit="return confirm('emin misiniz ?')"
+    >
+      Delete
+    </button>
+  </form>
+  }
+  <hr />
+  <div class="mb-3">
+    <a class="btn btn-primary" asp-controller="Account" asp-action="Create"
+      >Create</a>
+  </div>
+</ApplicationUser>

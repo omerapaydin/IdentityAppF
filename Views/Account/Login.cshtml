@@ -1,0 +1,25 @@
+@model LoginViewModel
+<h1>Login</h1>
+<hr />
+
+<div class="container box-shadow" style="background-color: cornsilk">
+  <div class="row p-3">
+    <form asp-action="Login" method="post">
+      <div class="text-danger" asp-validation-summary="All"></div>
+      <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label asp-for="Password" class="form-label">Password</label>
+        <input asp-for="Password" class="form-control" type="password" />
+      </div>
+      <div class="mb-3 form-check">
+        <input asp-for="RememberMe" class="form-check-input" />
+        <label asp-for="RememberMe" class="form-check-label"></label>
+      </div>
+      <button type="submit" class="btn btn-primary">Kaydet</button>
+      <a asp-action="ForgotPassword" class="btn btn-warning">Şifremi Unuttum</a>
+    </form>
+  </div>
+</div>
